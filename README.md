@@ -1,6 +1,6 @@
 # solid_assert
 
-*solid_assert* is a simple implementation of an `assert` utility in Ruby. It let you code in your assumptions when coding. 
+*solid_assert* is a simple implementation of an `assert` utility in Ruby. It let you code tests for your assumptions inside your code itself. 
 
 Notice that assertions shouldn't be used for handling error situations. Use Ruby built-in exception handling for that. Assertions are meant to test conditions about the integrity of your code. You should use them for testing assumptions like the following: 
 
