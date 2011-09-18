@@ -4,7 +4,7 @@
 
 Assertions are meant to test conditions about the integrity of your code. You should use them for testing assumptions like the following:
 
-- If it reaches here, then this variable has to have this value.
+- If the flow reaches here, then this variable has to have this value.
 - This line of code should never be executed.
 - At this point, this list should contain one entry for all the keys in this hash.
 
