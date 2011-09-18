@@ -1,15 +1,24 @@
-= solid_assert
+# solid_assert
 
-Description goes here.
+solid_assert is a simple implementation of an `assert` utility in Ruby. 
 
-== Contributing to solid_assert
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+It let you code in your assumptions when coding. Sometimes, when you are coding, you have this thinking of "I it reaches here, then this variable has to be this value", or "This line should never be executed", or "At this point, this list should contain an entry for all the keys in this hash". These are the kind of scenarios when assertions comes handy.
+
+The practice of using assertions makes your code more solid, since it is the computer who systematically verifies your code integrity. 
+
+# Installation
+
+In your `Gemfile`
+
+	gem "solid_assert"
+
+# Usage
+
+
+## References
+
+- [Programming with assertions](http://download.oracle.com/javase/1.4.2/docs/guide/lang/assert.html). A great article on assertions. It is about the Java language, but the concepts it explains apply to any programming language.
+- [Writing Solid Code](http://www.amazon.com/Writing-Solid-Code-Microsoft-Programming/dp/1556155514).
+
 
 

@@ -46,3 +46,7 @@ pkg
 
 # For rubinius:
 #*.rbc
+
+.idea
+.yardoc
+Gemfile.lock
