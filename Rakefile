@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "solid_assert"
   gem.homepage = "http://github.com/jorgemanrubia/solid_assert"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Assert utility for ruby}
+  gem.description = %Q{Assert utility for ruby. It let you code your assumptions and code invariants, so they are checked automatically. It can be deactivated, so you it doesn't affect to your program performance (for example, in production)'}
   gem.email = "jorge.manrubia@gmail.com"
   gem.authors = ["Jorge Manrubia"]
   # dependencies defined in Gemfile
