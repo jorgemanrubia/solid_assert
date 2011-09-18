@@ -29,7 +29,7 @@ Assertions are disabled by default.
 Use `assert` for testing conditions. You can optionally provide a message
 
 	assert some_string != "some value"
-	assert clients.list?, "Isn't the clients list empty?"
+	assert clients_list.empty?, "Isn't the clients list empty?"
 	
 Use `invariant` for testing blocks of code. This comes handy when testing your assumptions requires several lines of code. You can provide an optional message if you want
 
