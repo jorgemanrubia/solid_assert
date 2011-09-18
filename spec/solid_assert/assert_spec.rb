@@ -6,29 +6,29 @@ describe SolidAssert::Assert do
   describe "#assert" do
     describe "without assertion message" do
       it "should fail when condition is false" do
-        lambda { assert false }.should raise_error SolidAssert::AssertionFailedError
+        expect { assert false }.to raise_error SolidAssert::AssertionFailedError
       end
 
       it "should fail when condition evaluates to false" do
-        lambda { assert nil }.should raise_error SolidAssert::AssertionFailedError
+        expect { assert nil }.to raise_error SolidAssert::AssertionFailedError
       end
 
       it "should not fail when condition is true" do
-        lambda { assert true }.should_not raise_error SolidAssert::AssertionFailedError
+        expect { assert true }.to_not raise_error SolidAssert::AssertionFailedError
       end
 
       it "should not fail when condition evaluates to true" do
-        lambda { assert "This evaluates to true" }.should_not raise_error SolidAssert::AssertionFailedError
+        expect { assert "This evaluates to true" }.to_not raise_error SolidAssert::AssertionFailedError
       end
     end
 
     describe "with assertion message" do
       it "should raise error with specified message when condition evaluates to false" do
-        lambda { assert nil, "The error message" }.should raise_error(SolidAssert::AssertionFailedError, "The error message")
+        expect { assert nil, "The error message" }.to raise_error(SolidAssert::AssertionFailedError, "The error message")
       end
 
       it "should not raise any error when condition doesn't evaluate to false'" do
-        lambda { assert 'This evaluates to true', "The error message" }.should_not raise_error(SolidAssert::AssertionFailedError)
+        expect { assert 'This evaluates to true', "The error message" }.to_not raise_error(SolidAssert::AssertionFailedError)
       end
     end
   end

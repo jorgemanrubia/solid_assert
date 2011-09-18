@@ -17,7 +17,7 @@ describe SolidAssert::Assert do
 
     it "should turn on the assertions" do
       SolidAssert.enable_assertions
-      lambda{assert false}.should raise_error(SolidAssert::AssertionFailedError)
+      expect {assert false}.to raise_error(SolidAssert::AssertionFailedError)
     end
   end
 
