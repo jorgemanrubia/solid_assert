@@ -1,11 +1,7 @@
 require "spec_helper"
 
 describe SolidAssert::NullAssert do
-  before(:all) do
-    Object.class_eval do
-      include SolidAssert::NullAssert
-    end
-  end
+  include SolidAssert::NullAssert
 
   describe "#assert" do
     it "should do nothing without message" do
@@ -32,3 +28,4 @@ describe SolidAssert::NullAssert do
   end
 
 end
+

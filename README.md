@@ -24,9 +24,7 @@ You can enable assertions with
 
 	SolidAssert.enable_assertions
 
-You can disabled assertions with
-	
-	SolidAssert.disable_assertions
+Assertions are disabled by default.
 
 Use `assert` for testing conditions. You can optionally provide a message
 

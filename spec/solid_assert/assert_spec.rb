@@ -1,11 +1,7 @@
 require "spec_helper"
 
 describe SolidAssert::Assert do
-  before(:all) do
-    Object.class_eval do
-      include SolidAssert::Assert
-    end
-  end
+  include SolidAssert::Assert
 
   describe "#assert" do
     describe "without assertion message" do

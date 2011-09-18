@@ -1,5 +1,4 @@
 module SolidAssert
-
   # Turns the assertions on
   def self.enable_assertions
     Object.class_eval do
@@ -7,13 +6,9 @@ module SolidAssert
     end
   end
 
-  # Turns the assertions off
-  def self.disable_assertions
-    Object.class_eval do
-      include NullAssert
-    end
+  Object.class_eval do
+    include NullAssert
   end
-
 end
 
 
