@@ -10,8 +10,6 @@ Assertions are meant to test conditions about the integrity of your code. You sh
 
 Notice that assertions shouldn't be used for handling error situations. Use Ruby built-in exception handling for that.
 
-The practice of using assertions makes your code more solid, since it is the computer who systematically verifies your code integrity.
-
 Assertions should be used in development mode. You can disable them in production for performance reasons.
 
 # Installation
