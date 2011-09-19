@@ -24,6 +24,14 @@ You can enable assertions with
 
 	SolidAssert.enable_assertions
 
+## Rails
+
+You can create a file named `solid_assert.rb` in the `config/initializers` dir with the following content:
+
+	SolidAssert.enable_assertions if !Rails.env.production?
+
+This way assertions will be disabled in production
+
 Assertions are disabled by default.
 
 Use `assert` for testing conditions. You can optionally provide a message
