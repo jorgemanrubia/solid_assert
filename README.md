@@ -18,17 +18,19 @@ In your `Gemfile`
 
 	gem "solid_assert"
 
+## Rails
+
+Create a file named `solid_assert.rb` in the `config/initializers` dir with the following content:
+
+	SolidAssert.enable_assertions if !Rails.env.production?
+
+This way assertions will be disabled in production and enabled in the rest of environments
+
 # Usage
 
 You can enable assertions with
 
 	SolidAssert.enable_assertions
-
-## Rails
-
-You can create a file named `solid_assert.rb` in the `config/initializers` dir with the following content:
-
-	SolidAssert.enable_assertions if !Rails.env.production?
 
 This way assertions will be disabled in production
 
