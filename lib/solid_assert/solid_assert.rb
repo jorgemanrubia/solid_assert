@@ -6,9 +6,6 @@ module SolidAssert
     end
   end
 
-  Object.class_eval do
-    include NullAssert
-  end
 end
 
 
