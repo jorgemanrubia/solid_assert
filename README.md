@@ -49,7 +49,7 @@ Use `invariant` for testing blocks of code. This comes handy when testing your a
 		one_variable > other_variable
 	end
 
-	invariant "Do the lists have different sizes?" do
+	invariant "Lists with different sizes?" do
 		one_variable = calculate_some_value
 		other_variable = calculate_some_other_value
 		one_variable > other_variable
