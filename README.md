@@ -6,7 +6,7 @@ Assertions are meant to test conditions about the integrity of your code. You sh
 
 - If the flow reaches here, then this variable has to have this value.
 - This line of code should never be executed.
-- At this point, this list should contain one entry for all the keys in this hash.
+- At this point, this list should contain one entry for each key in this hash.
 
 Notice that assertions shouldn't be used for handling error situations. Use Ruby built-in exception handling for that.
 
