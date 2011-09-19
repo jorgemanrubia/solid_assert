@@ -18,21 +18,11 @@ In your `Gemfile`
 
 	gem "solid_assert"
 
-## Rails
-
-Create a file named `solid_assert.rb` in the `config/initializers` dir with the following content:
-
-	SolidAssert.enable_assertions if !Rails.env.production?
-
-This way assertions will be disabled in production and enabled in the rest of environments
-
 # Usage
 
 You can enable assertions with
 
 	SolidAssert.enable_assertions
-
-This way assertions will be disabled in production
 
 Assertions are disabled by default.
 
@@ -54,6 +44,14 @@ Use `invariant` for testing blocks of code. This comes handy when testing your a
 		other_variable = calculate_some_other_value
 		one_variable > other_variable
 	end
+
+## Rails
+
+Create a file named `solid_assert.rb` in the `config/initializers` dir with the following content:
+
+	SolidAssert.enable_assertions if !Rails.env.production?
+
+This way assertions will be disabled in production and enabled in the rest of environments
 
 ## References
 
