@@ -16,40 +16,52 @@ Assertions are typically used in development mode. You might want to disable the
 
 In your `Gemfile`
 
-	gem "solid_assert"
+```ruby
+gem "solid_assert"
+```
 
 # Usage
 
 You can enable assertions with
 
-	SolidAssert.enable_assertions
+```ruby
+SolidAssert.enable_assertions
+```
 
 Assertions are disabled by default.
 
 Use `assert` for testing conditions. You can optionally provide a message
 
-	assert some_string != "some value"
-	assert clients.empty?, "Isn't the clients list empty?"
-	
+```ruby
+assert some_string != "some value"
+assert clients.empty?, "Isn't the clients list empty?"
+```
+
 Use `invariant` for testing blocks of code. This comes handy when testing your assumptions requires several lines of code. You can provide an optional message if you want
 
-	invariant do
-		one_variable = calculate_some_value
-		other_variable = calculate_some_other_value
-		one_variable > other_variable
-	end
+```ruby
+invariant do
+	one_variable = calculate_some_value
+	other_variable = calculate_some_other_value
+	one_variable > other_variable
+end
+```
 
-	invariant "Lists with different sizes?" do
-		one_variable = calculate_some_value
-		other_variable = calculate_some_other_value
-		one_variable > other_variable
-	end
+```ruby
+invariant "Lists with different sizes?" do
+	one_variable = calculate_some_value
+	other_variable = calculate_some_other_value
+	one_variable > other_variable
+end
+```
 
 ## Rails
 
 Create a file named `solid_assert.rb` in the `config/initializers` dir with the following content:
 
-	SolidAssert.enable_assertions if !Rails.env.production?
+```ruby
+SolidAssert.enable_assertions if !Rails.env.production?
+```
 
 This way assertions will be disabled in production and enabled in the rest of environments
 
