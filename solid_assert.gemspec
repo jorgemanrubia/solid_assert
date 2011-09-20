@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{solid_assert}
-  s.version = "0.7.2"
+  s.version = "0.7.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Jorge Manrubia}]
-  s.date = %q{2011-09-19}
+  s.date = %q{2011-09-20}
   s.description = %q{Assert utility for ruby. It let you code your assumptions and code invariants, so they are checked automatically. It can be deactivated, so you it doesn't affect to your program performance (for example, in production)'}
   s.email = %q{jorge.manrubia@gmail.com}
   s.extra_rdoc_files = [
