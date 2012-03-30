@@ -60,7 +60,7 @@ end
 Create a file named `solid_assert.rb` in the `config/initializers` dir with the following content:
 
 ```ruby
-SolidAssert.enable_assertions if !Rails.env.production?
+SolidAssert.enable_assertions unless Rails.env.production?
 ```
 
 This way assertions will be disabled in production and enabled in the rest of environments
