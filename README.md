@@ -30,11 +30,13 @@ SolidAssert.enable_assertions
 
 Assertions are disabled by default.
 
-Use `assert` for testing conditions. You can optionally provide a message
+Use `assert` for testing conditions. You can optionally provide a message or exception
 
 ```ruby
 assert some_string != "some value"
 assert clients.empty?, "Isn't the clients list empty?"
+assert xyz, StandardError.new("The error message")
+assert abc, CustomExceptionClass
 ```
 
 Use `invariant` for testing blocks of code. This comes handy when testing your assumptions requires several lines of code. You can provide an optional message if you want

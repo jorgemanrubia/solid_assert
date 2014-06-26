@@ -5,5 +5,3 @@ end
 Object.class_eval do
   include SolidAssert::NullAssert
 end
-
-
