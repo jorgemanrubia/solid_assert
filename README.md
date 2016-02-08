@@ -1,6 +1,6 @@
 # solid_assert
 
-*solid_assert* is a simple implementation of an `assert` utility in Ruby. It let you write tests for your assumptions while coding. 
+*solid_assert* is a simple implementation of an `assert` utility in Ruby. It lets you write tests for your assumptions while coding.
 
 Assertions are meant to test conditions about the integrity of your code. You should use them for testing assumptions like the following:
 
@@ -14,7 +14,7 @@ Assertions are typically used in development mode. You might want to disable the
 
 # Installation
 
-In your `Gemfile`
+Add to your `Gemfile`:
 
 ```ruby
 gem "solid_assert"
@@ -22,38 +22,41 @@ gem "solid_assert"
 
 # Usage
 
-You can enable assertions with
+You can enable/disable assertions with:
 
 ```ruby
 SolidAssert.enable_assertions
+SolidAssert.disable_assertions
 ```
 
 Assertions are disabled by default.
 
-Use `assert` for testing conditions. You can optionally provide a message or exception
+Use `assert` for testing conditions. You can optionally provide an error message,
+exception class or exception object.
 
 ```ruby
 assert some_string != "some value"
-assert clients.empty?, "Isn't the clients list empty?"
-assert xyz, StandardError.new("The error message")
-assert abc, CustomExceptionClass
+assert clients.empty?, "The list must not be empty!"
+assert xyz, StandardError.new("This is a custom exception object")
+assert abc, CustomErrorClass
 ```
 
-Use `invariant` for testing blocks of code. This comes handy when testing your assumptions requires several lines of code. You can provide an optional message if you want
+Use `invariant` for testing blocks of code. This comes handy when testing your assumptions requires several lines of code.
+You can provide an optional message (or exception class/object) if you want.
 
 ```ruby
 invariant do
-	one_variable = calculate_some_value
-	other_variable = calculate_some_other_value
-	one_variable > other_variable
+  one_variable = calculate_some_value
+  other_variable = calculate_some_other_value
+  one_variable > other_variable
 end
 ```
 
 ```ruby
-invariant "Lists with different sizes?" do
-	one_variable = calculate_some_value
-	other_variable = calculate_some_other_value
-	one_variable > other_variable
+invariant "Lists must have equal sizes!" do
+  len = calculate_list_length
+  other_len = calculate_other_list_length
+  len == other_len
 end
 ```
 
@@ -65,12 +68,9 @@ Create a file named `solid_assert.rb` in the `config/initializers` dir with the 
 SolidAssert.enable_assertions unless Rails.env.production?
 ```
 
-This way assertions will be disabled in production and enabled in the rest of environments
+This way assertions will be disabled in production and enabled in the rest of environments.
 
 ## References
 
 - [Programming with assertions](http://download.oracle.com/javase/1.4.2/docs/guide/lang/assert.html). A great article on assertions. It is about the Java language, but the concepts apply to any programming language.
 - There are good references to assertive programming in some classic books like [The Pragmatic Programmer From Journeyman to Master](http://www.amazon.com/exec/obidos/ASIN/020161622X/ref=nosim/jorgmanrpersp-20), [Code Complete](http://www.amazon.com/exec/obidos/ASIN/0735619670/ref=nosim/jorgmanrpersp-20) and [Writing solid code](http://www.amazon.com/exec/obidos/ASIN/1556155514/ref=nosim/jorgmanrpersp-20)
-
-
-
