@@ -1,25 +1,17 @@
 require "spec_helper"
 
 describe SolidAssert::Assert do
-  it "should enable the empty assert method by default" do
-    assert false
+  it "uses the NullAssert implementation by default" do
+    expect do
+      assert false
+      invariant { false }
+    end.not_to raise_error
   end
 
-  it "should enable the empty invariant method by default" do
-    invariant{false}
-  end
-
-  describe ".enable_assertions" do
-    it "should make the Object class to include the Assertions module" do
-      Object.should_receive(:include).with(SolidAssert::Assert)
+  describe "::enable_assertions" do
+    it "appends Assert module into the Object class" do
+      expect(Object).to receive(:include).with(SolidAssert::Assert)
       SolidAssert.enable_assertions
     end
-
-    it "should turn on the assertions" do
-      SolidAssert.enable_assertions
-      expect {assert false}.to raise_error(SolidAssert::AssertionFailedError)
-    end
   end
-
 end
-

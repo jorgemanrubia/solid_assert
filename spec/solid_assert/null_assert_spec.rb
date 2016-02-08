@@ -4,28 +4,34 @@ describe SolidAssert::NullAssert do
   include SolidAssert::NullAssert
 
   describe "#assert" do
-    it "should do nothing without message" do
-      assert false
-    end
-
-    it "should do nothing with message" do
-      assert false, "Some message"
-    end
-  end
-
-  describe "#invariants" do
-    it "should do nothing without message" do
-      invariant do
-        false
+    context "without assertion message" do
+      it "does nothing" do
+        expect { assert false }.not_to raise_error
       end
     end
 
-    it "should do nothing with message" do
-      invariant "Some message" do
-        false
+    context "with assertion message" do
+      it "does nothing" do
+        expect { assert false, "a message" }.not_to raise_error
       end
     end
   end
 
+  describe "#invariant" do
+    context "without assertion message" do
+      it "does nothing" do
+        expect do
+          invariant { false }
+        end.not_to raise_error
+      end
+    end
+
+    context "with assertion message" do
+      it "does nothing" do
+        expect do
+          invariant("a message") { false }
+        end.not_to raise_error
+      end
+    end
+  end
 end
-
