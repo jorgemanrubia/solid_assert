@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "solid_assert"
+
+require "irb"
+IRB.start

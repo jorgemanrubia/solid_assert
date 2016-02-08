@@ -1,31 +1,23 @@
 require "spec_helper"
 
 describe SolidAssert::NullAssert do
-  include SolidAssert::NullAssert
+  subject { described_class.instance }
 
   describe "#assert" do
-    it "should do nothing without message" do
-      assert false
-    end
-
-    it "should do nothing with message" do
-      assert false, "Some message"
-    end
-  end
-
-  describe "#invariants" do
-    it "should do nothing without message" do
-      invariant do
-        false
-      end
-    end
-
-    it "should do nothing with message" do
-      invariant "Some message" do
-        false
-      end
+    it "does nothing" do
+      expect do
+        subject.assert false
+        subject.assert false, "message"
+      end.not_to raise_error
     end
   end
 
+  describe "#invariant" do
+    it "does nothing" do
+      expect do
+        subject.invariant { false }
+        subject.invariant("message") { false }
+      end.not_to raise_error
+    end
+  end
 end
-
