@@ -6,6 +6,8 @@ describe SolidAssert::NullAssert do
   describe "#assert" do
     it "does nothing" do
       expect do
+        subject.assert true
+        subject.assert true, "message"
         subject.assert false
         subject.assert false, "message"
       end.not_to raise_error
@@ -15,6 +17,8 @@ describe SolidAssert::NullAssert do
   describe "#invariant" do
     it "does nothing" do
       expect do
+        subject.invariant { true }
+        subject.invariant("message") { true }
         subject.invariant { false }
         subject.invariant("message") { false }
       end.not_to raise_error

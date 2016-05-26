@@ -33,18 +33,16 @@ SolidAssert.disable_assertions
 
 Assertions are disabled by default.
 
-Use `assert` for testing conditions. You can optionally provide an error message,
-exception class or exception object.
+Use `assert` for testing conditions. You can optionally provide an error message.
 
 ```ruby
 assert some_string != "some value"
 assert clients.empty?, "The list must not be empty!"
-assert xyz, StandardError.new("This is a custom exception object")
-assert abc, CustomErrorClass
 ```
 
-Use `invariant` for testing blocks of code. This comes handy when testing your assumptions requires several lines of code.
-You can provide an optional message (or exception class/object) if you want.
+Use `invariant` for testing blocks of code. This comes handy
+when testing your assumptions requires several lines of code.
+You can provide an optional message too.
 
 ```ruby
 invariant do

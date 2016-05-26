@@ -25,25 +25,20 @@ describe SolidAssert::Assert do
     end
 
     context "with assertion message" do
-      it "raises error with a specified message when condition evaluates to false" do
+      it "fails with a specified message when condition is false" do
+        expect { subject.assert false, "message" }.to raise_error(SolidAssert::AssertionFailedError, "message")
+      end
+
+      it "fails with a specified message when condition evaluates to false" do
         expect { subject.assert nil, "message" }.to raise_error(SolidAssert::AssertionFailedError, "message")
       end
 
-      it "doesn't raise any error when condition doesn't evaluate to false" do
+      it "doesn't fail when condition is true" do
+        expect { subject.assert true, "message" }.not_to raise_error
+      end
+
+      it "doesn't fail when condition evaluates to true" do
         expect { subject.assert "this evaluates to true", "message" }.not_to raise_error
-      end
-    end
-
-    context "with exception class" do
-      it "raises exception of the specified class" do
-        expect { subject.assert false, CustomExceptionClass }.to raise_error(CustomExceptionClass)
-      end
-    end
-
-    describe "with exception object" do
-      it "raises a specified exception object" do
-        error = CustomExceptionClass.new("message")
-        expect { subject.assert false, error }.to raise_error(error)
       end
     end
   end

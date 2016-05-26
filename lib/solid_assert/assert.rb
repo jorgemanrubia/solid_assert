@@ -12,20 +12,12 @@ module SolidAssert
     # Usage:
     #   assert expr  # raise SolidAssert::AssertionFailedError if expr is falsy
     #   assert !list.empty?, "The list should not be empty"  # optional error message
-    #   assert false, StandardError.new("Not XYZ!")  # raise custom exception object
-    #   assert false, CustomError  # raise custom exception class
     #
     # @param condition A condition to assert
-    # @param exception An optional error message (or exception)
+    # @param message An optional error message
     # @raise {AssertionFailedError} when the condition is not satisfied
-    def assert(condition, exception = nil)
-      if !condition
-        if exception.kind_of?(Exception) or exception.class.eql?(Class)
-          raise exception
-        else
-          raise SolidAssert::AssertionFailedError.new(exception)
-        end
-      end
+    def assert(condition, message = nil)
+      fail SolidAssert::AssertionFailedError.new(message) if !condition
     end
 
     # Let you {#assert} a block of code.
@@ -45,15 +37,11 @@ module SolidAssert
     #     some_number == other_number
     #   end
     #
-    #   invariant CustomError do  # custom exception class
-    #     ...
-    #     some_number == other_number
-    #   end
-    #
-    # @param exception An optional error message (or exception)
+    # @param message An optional error message
+    # @raise {AssertionFailedError} when the condition is not satisfied
     # @yield A block of code
-    def invariant(exception = nil)
-      assert yield, exception
+    def invariant(message = nil)
+      assert yield, message
     end
   end
 end
