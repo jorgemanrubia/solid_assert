@@ -72,5 +72,5 @@ This way assertions will be disabled in production and enabled in the rest of en
 
 ## References
 
-- [Programming with assertions](http://download.oracle.com/javase/1.4.2/docs/guide/lang/assert.html). A great article on assertions. It is about the Java language, but the concepts apply to any programming language.
+- [Programming with assertions](https://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html). A great article on assertions. It is about the Java language, but the concepts apply to any programming language.
 - There are good references to assertive programming in some classic books like [The Pragmatic Programmer From Journeyman to Master](http://www.amazon.com/exec/obidos/ASIN/020161622X/ref=nosim/jorgmanrpersp-20), [Code Complete](http://www.amazon.com/exec/obidos/ASIN/0735619670/ref=nosim/jorgmanrpersp-20) and [Writing solid code](http://www.amazon.com/exec/obidos/ASIN/1556155514/ref=nosim/jorgmanrpersp-20)
