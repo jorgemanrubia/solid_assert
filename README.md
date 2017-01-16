@@ -10,10 +10,6 @@ Assertions are meant to test conditions about the integrity of your code. You sh
 - This line of code should never be executed.
 - At this point, this list should contain one entry for each key in this hash.
 
-Notice that assertions shouldn't be used for handling error situations. Use Ruby built-in exception handling for that.
-
-Assertions are typically used in development mode. You might want to disable them in production for performance reasons.
-
 # Installation
 
 Add to your `Gemfile`:
@@ -31,7 +27,7 @@ SolidAssert.enable_assertions
 SolidAssert.disable_assertions
 ```
 
-Assertions are disabled by default.
+Assertions are disabled by default and are typically used in development mode only. You might want to disable them in production for performance reasons.
 
 Use `assert` for testing conditions. You can optionally provide an error message.
 
@@ -59,6 +55,10 @@ invariant "Lists must have equal sizes!" do
   len == other_len
 end
 ```
+
+### Assertion Error
+
+Failed assertion will raise `SolidAssert::AssertionFailedError` error. You shouldn't catch it in a `rescue` block! If it raised then something is wrong with either your code or with you assumption. *Assertions shouldn't be used for handling error situations!* Use Ruby built-in exception handling for that.
 
 ## Rails
 
