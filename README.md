@@ -32,8 +32,11 @@ Assertions are disabled by default and are typically used in development mode on
 Use `assert` for testing conditions. You can optionally provide an error message.
 
 ```ruby
-assert some_string != "some value"
-assert clients.empty?, "The list must not be empty!"
+assert some_string != "unexpected value"
+assert user.authenticated?
+
+assert apples_count > 5, "Not enough apples!"
+assert !clients.empty?, "The list must NOT be empty!"
 ```
 
 Use `invariant` for testing blocks of code. This comes handy
