@@ -1,3 +1,3 @@
 module SolidAssert
-  class AssertionFailedError < StandardError ; end
+  class AssertionFailedError < Exception ; end
 end
